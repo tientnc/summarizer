@@ -1,0 +1,77 @@
+:root {
+  color-scheme: light;
+  --ink: #17201b;
+  --muted: #667069;
+  --line: #dce3dd;
+  --paper: #f4f6f2;
+  --accent: #1d6b4d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 16px/1.5 Arial, sans-serif;
+}
+
+main {
+  width: min(820px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+header { margin-bottom: 48px; }
+h1 { max-width: 650px; margin: 8px 0; font: 700 clamp(38px, 7vw, 68px)/1.02 Georgia, serif; letter-spacing: -2px; }
+h2 { margin: 0; font-size: 20px; }
+p { color: var(--muted); }
+.eyebrow, .safe { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+
+section {
+  margin: 18px 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+
+form, .actions, .sectionTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+form { margin-top: 18px; }
+.sectionTitle { justify-content: space-between; }
+.sectionTitle p { margin: 2px 0 16px; }
+
+input, select, button, .button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 0 14px;
+  font: inherit;
+}
+
+input { flex: 1; min-width: 100px; }
+button, .button { color: white; background: var(--accent); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+button:disabled { cursor: wait; opacity: .65; }
+.secondary { color: var(--ink); background: white; }
+.textButton { border: 0; color: var(--muted); background: transparent; }
+
+article { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.summary { white-space: pre-wrap; }
+ul { margin: 18px 0 0; padding: 0; list-style: none; }
+li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+li a { color: var(--ink); }
+li span { color: var(--muted); font-size: 13px; }
+li.email { display: block; }
+li.email p { margin: 4px 0 0; }
+.error { padding: 12px 16px; color: #8b1e1e; background: #fff0f0; border-radius: 9px; }
+
+@media (max-width: 620px) {
+  main { padding: 36px 0; }
+  form, .actions { align-items: stretch; flex-direction: column; }
+  input, select, button, .button { width: 100%; }
+}
